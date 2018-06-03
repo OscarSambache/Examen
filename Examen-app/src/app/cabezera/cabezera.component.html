@@ -1,0 +1,28 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input  matInput placeholder=Nombre #nombreText >
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder=Direccion #direccionText >
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder='Fecha Apertura' #fechaAperturaText>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder='RUC' #RUCText>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder=Matriz #esMatrizText>
+  </mat-form-field>
+  <br>
+  <button mat-button color="accent">
+    Limpiar
+  </button>
+  <button mat-button color="accent" (click)="aplicarClase(nombreText.value, direccionText.value, fechaAperturaText.value, RUCText.value,esMatrizText.value)">
+    Crear
+  </button>
+</form>

@@ -1,0 +1,11 @@
+<div class="row">
+  <div *ngFor="let tienda of listaTienda">
+    <div class="col-1">
+      <button mat-button color="accent" (click)="seleccionarTienda(tienda)">
+        {{tienda.nombre}}
+      </button>
+    </div>
+
+  </div>
+</div>
+

@@ -1,8 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <app-carusel [listaTienda]="arregloTienda"></app-carusel>
+    </div>
+    <div class="col-6" style="width: 20%; margin-left: auto; margin-right: auto; text-align: center">
+      <app-cabezera
+        (tiendaInsertada)="guardarTienda($event)"
+      ></app-cabezera>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px">
 
-<app-cabezera
-  (obtenerNombre)="guardarNombre($event)"
-  (obtenerDireccion)="guardarDireccion($event)"
-  (obtenerFechaApertura)="guardarFechaApertura($event)"
-  (obtenerRUC)="guardarRUC($event)"
-  (obtenerEsMatriz)="guardarEsMatriz($event)"
-></app-cabezera>
+      <app-contenedor [listaTienda]="arregloTienda"
+                      (tiendaseleccionada)="formatearTiendaSeleccionada($event)">
+      </app-contenedor>
+
+  </div>
+  <div class="row">
+    <div class="col-6" style="margin-top: 20px">
+      <app-detalle-producto *ngIf="tiendaSeleccionadd" [tienda]="tiendaSeleccionadd"
+       (productoInsertada)="formatearProducto($event)" ></app-detalle-producto>
+    </div>
+    <div class="col-6" style="margin-top: 20px">
+      <app-tienda-card *ngIf="tiendaSeleccionadd" [tienda]="tiendaSeleccionadd">
+
+      </app-tienda-card>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px">
+          <app-tabla *ngIf="tiendaSeleccionadd&&tiendaSeleccionadd.productos" [productos]="tiendaSeleccionadd.productos"></app-tabla>
+      </div>
+
+
+</div>
+
+
+

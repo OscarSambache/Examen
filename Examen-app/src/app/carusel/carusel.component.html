@@ -1,3 +1,12 @@
-<p>
-  carusel works!
-</p>
+<ngb-carousel *ngIf="(listaTienda.length>0)">
+    <ng-template ngbSlide  *ngFor="let tienda of listaTienda">
+      <img [src]="tienda?.imagen" alt="Random first slide">
+      <div class="carousel-caption">
+        <h3>{{tienda?.nombre}}</h3>
+        <p>{{tienda?.direccion}}</p>
+      </div>
+    </ng-template>
+</ngb-carousel>
+<div *ngIf="!(listaTienda.length>0)">
+  Sin tiendas
+</div>

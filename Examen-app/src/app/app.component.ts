@@ -1,56 +1,36 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Tienda} from "./Models/tienda";
+import {Producto} from "./Models/producto";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   arregloTienda: Tienda[];
-  tienda:Tienda;
+  tiendaSeleccionadd: Tienda;
   title = 'app';
+  debeVerse=true;
 
-  guardarNombre(nombre){
-    this.tienda.nombre=nombre;
-    console.log('Evento: ', nombre);
+constructor(){
+}
+
+ngOnInit(){
+  this.arregloTienda =[];
+}
+  guardarTienda (evento: Tienda){
+    this.arregloTienda.push(evento);
+    console.log('[LISTA DE TIENDAS]', this.arregloTienda)
   }
-  guardarDireccion(direccion){
-    this.tienda.direccion=direccion;
-    console.log('Evento: ', direccion);
+  formatearTiendaSeleccionada(event: Tienda){
+  this.tiendaSeleccionadd=event;
+  console.log('tienda', this.tiendaSeleccionadd);
   }
-  guardarFechaApertura(fechaApertura){
-    this.tienda.fechaApertura=fechaApertura;
-    console.log('Evento: ', fechaApertura);
-  }
-  guardarRUC(RUC){
-    this.tienda.RUC= RUC;
-    console.log('Evento: ', RUC);
-  }
-  guardarEsMatriz(esMatriz){
-    this.tienda.esMatriz=esMatriz;
-    console.log('Evento: ', esMatriz);
-    this.guardarTienda();
-  }
-  guardarTienda (){
-    this.arregloTienda.push(this.tienda);
-    console.log(this.tienda);
+  formatearProducto(event: Producto){
+    this.tiendaSeleccionadd.productos.push(event);
+    console.log('producto', this.tiendaSeleccionadd)
   }
 
 }
-interface Tienda{
-  nombre: string;
-  direccion: string;
-  fechaApertura: string;
-  RUC: number;
-  esMatriz: boolean;
-  imagen?: string;
-  producto?: {
-    numeroProducto:number;
-    nombreProducto: string;
-    descipcionProducto:string;
-    precioProducto: number;
-    fechaLanzamientoProducto: string;
-    aniosGarantia: number;
-    tiendaId: string
-  }
-}
+

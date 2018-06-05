@@ -1,0 +1,23 @@
+<h2 class="text-center">Tabla de Productos</h2>
+<p-table [value]="productos">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Numero</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th>Fecha Lanzamiento</th>
+      <th>Años de Garantia</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-producto>
+    <tr>
+      <td>{{producto.numeroProducto}}</td>
+      <td>{{producto.nombreProducto}}</td>
+      <th>{{producto.descipcionProducto}}</th>
+      <th>{{producto.precioProducto}}</th>
+      <th>{{producto.fechaLanzamientoProducto}}</th>
+      <th>{{producto.aniosGarantia}}</th>
+    </tr>
+  </ng-template>
+</p-table>

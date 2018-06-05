@@ -1,0 +1,40 @@
+ <h3>CREAR PRODUCTO</h3>
+   <span class="ui-float-label margen espacio-input" >
+    <input pInputText id="id_numero " #textoNumero type="text"  [(ngModel)] = "producto.numeroProducto" size="30">
+    <label for="id_numero">Numero</label>
+  </span>
+   <span class="ui-float-label margen espacio-input" >
+    <input pInputText id="id_nombre" type="text" [(ngModel)] = "producto.nombreProducto" size="30">
+    <label for="id_nombre">Nombre</label>
+  </span>
+   <span class="ui-float-label margen espacio-input" >
+    <input pInputText id="id_descripcion" type="text" [(ngModel)] = "producto.descipcionProducto" size="30">
+    <label for="id_descripcion">Descripion</label>
+  </span>
+   <span class="ui-float-label margen espacio-input" >
+    <input id="id_precio" [(ngModel)] = "producto.precioProducto" type="text" size="30" pInputText>
+    <label for="id_precio">Precio</label>
+  </span>
+   <span class="ui-float-label margen espacio-input" >
+    <input id="id_fecha_lanzamiento" [(ngModel)] = "producto.fechaLanzamientoProducto" type="text" size="30" pInputText>
+    <label for="id_fecha_lanzamiento">Fecha Lanzamiento</label>
+  </span>
+   <span class="ui-float-label margen espacio-input" >
+    <input id="id_aniosGarantia" [(ngModel)] = "producto.aniosGarantia" type="text" size="30" pInputText>
+    <label for="id_aniosGarantia">Años de Garantia</label>
+  </span>
+  <div class="row margen espacio-input">
+      <button  pButton type="button " label="Borrar"
+               class="ui-button-success text-center"
+      >
+
+      </button>
+      <button  pButton type="button " label="Crear"
+               class="ui-button-success text-center"
+               (click)="leerDatos()"
+      ></button>
+
+
+  </div>
+
+

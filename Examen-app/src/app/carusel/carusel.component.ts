@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
+import {Tienda} from "../Models/tienda";
 
 @Component({
   selector: 'app-carusel',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carusel.component.css']
 })
 export class CaruselComponent implements OnInit {
+  @Input() listaTienda: Tienda[]
 
-  constructor() { }
-
+  constructor() {}
   ngOnInit() {
+
   }
+
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit , Output, EventEmitter} from '@angular/core';
+import {Tienda} from "../Models/tienda";
 
 @Component({
   selector: 'app-cabezera',
@@ -6,43 +7,23 @@ import { Component, OnInit , Output, EventEmitter} from '@angular/core';
   styleUrls: ['./cabezera.component.css']
 })
 export class CabezeraComponent implements OnInit {
-  nombre: string;
-  direccion: string;
-  fechaApertura: string;
-  RUC: number;
-  esMatriz: boolean;
-
-  @Output() obtenerNombre: EventEmitter<string> = new EventEmitter();
-  @Output() obtenerDireccion: EventEmitter<string> = new EventEmitter();
-  @Output() obtenerFechaApertura: EventEmitter<string> = new EventEmitter();
-  @Output() obtenerRUC: EventEmitter<number> = new EventEmitter();
-  @Output() obtenerEsMatriz: EventEmitter<boolean> = new EventEmitter();
+  tienda: Tienda;
+  @Output() tiendaInsertada: EventEmitter <Tienda> = new EventEmitter<Tienda>();
 
   constructor() { }
 
   ngOnInit() {
   }
-  aplicarClase(valorInputNombre: string, valorInputDireccion:string, valorInputFechaApertura: string, valorInputRUC: number, valorInputEsMatriz: boolean) {
-    this.nombre=valorInputNombre;
-    this.direccion= valorInputDireccion;
-    this.fechaApertura=valorInputFechaApertura;
-    this.RUC = valorInputRUC;
-    this.esMatriz=valorInputEsMatriz;
-    this.obtenerNombre.emit(this.nombre);
-    this.obtenerDireccion
-      .emit(this.direccion);
-    this.obtenerFechaApertura.emit(this.fechaApertura);
-    this.obtenerRUC.emit(this.RUC);
-    this.obtenerEsMatriz.emit(this.esMatriz);
+  aplicarClase(valorInputNombre: string, valorInputDireccion:string, valorInputFechaApertura: string, valorInputRUC: number, valorInputEsMatriz: boolean,) {
+    this.tienda = new Tienda();
+    this.tienda.nombre= valorInputNombre;
+    this.tienda.direccion = valorInputDireccion;
+    this.tienda.fechaApertura = valorInputFechaApertura;
+    this.tienda.RUC= valorInputRUC;
+    this.tienda.esMatriz= valorInputEsMatriz;
+    this.tienda.imagen='http://d3ustg7s7bf7i9.cloudfront.net/mmediafiles/pl/ee/eee060b0-296f-4463-8429-542adef7bb6b_749_499.jpg';
 
-  }
-  ObtenerDatosTienda() {
-    this.obtenerNombre.emit(this.nombre);
-    this.obtenerDireccion
-      .emit(this.direccion);
-    this.obtenerFechaApertura.emit(this.fechaApertura);
-    this.obtenerRUC.emit(this.RUC);
-    this.obtenerEsMatriz.emit(this.esMatriz);
+    this.tiendaInsertada.emit(this.tienda);
   }
 
 }

@@ -7,8 +7,8 @@ import {Tienda} from "../Models/tienda";
   styleUrls: ['./contenedor.component.css']
 })
 export class ContenedorComponent implements OnInit {
-  @Input() listaTienda: Tienda[]
-  @Output() tiendaseleccionada: EventEmitter<Tienda> = new EventEmitter<Tienda>()
+  @Input() listaTienda: Tienda[];
+  @Output() tiendaseleccionada: EventEmitter<Tienda> = new EventEmitter<Tienda>();
   constructor() { }
 
   ngOnInit() {

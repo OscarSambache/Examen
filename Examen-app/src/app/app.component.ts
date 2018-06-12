@@ -11,7 +11,6 @@ export class AppComponent implements OnInit{
   arregloTienda: Tienda[];
   tiendaSeleccionadd: Tienda;
   title = 'app';
-  debeVerse=true;
 
 constructor(){
 }

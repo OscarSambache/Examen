@@ -7,7 +7,7 @@ import {Tienda} from "../Models/tienda";
   styleUrls: ['./carusel.component.css']
 })
 export class CaruselComponent implements OnInit {
-  @Input() listaTienda: Tienda[]
+  @Input() listaTienda: Tienda[];
 
   constructor() {}
   ngOnInit() {
